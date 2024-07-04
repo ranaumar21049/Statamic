@@ -1,0 +1,52 @@
+button.z-10 {
+    float: right;
+}
+
+.publish-tabs {
+    display: flex;
+}
+
+.tab-button {
+    border: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.tab-button:focus {
+    outline: none;
+}
+
+.tab-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #2e9fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.tab-button[aria-selected="true"]::after {
+    width: 100%;
+}
+
+.tab-button[aria-selected="true"] {
+    color: #2e9fff;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* This selector targets the editable element (excluding comments). */
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+    height: 200px;
+    overflow-y: auto;
+}
